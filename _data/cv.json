@@ -1,0 +1,202 @@
+{
+  "basics": {
+    "name": "Christopher Sullivan",
+    "label": "Software Developer",
+    "picture": "",
+    "email": "n/a",
+    "phone": "n/a",
+    "website": "not yet",
+    "summary": "An enthusiastic and multi-faceted software developer with a breadth of experience in Information Technology which has included roles in support, consultancy and software development working as an individual and part of a team.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Basingstoke",
+      "countryCode": "UK",
+      "region": "Hampshire"
+    },
+    "profiles": []
+  },
+  "work": [
+    {
+      "company": "Sage",
+      "position": "Senior Software Engineer",
+      "website": "https://www.sage.com",
+      "startDate": "Oct-2017",
+      "endDate": "Present",
+      "summary": "HR and Payroll applications in Sage x3",
+      "highlights": [
+        "Nodejs, x3 4GL, Docker, Ruby"
+      ]
+    },
+    {
+      "company": "NewVoiceMedia",
+      "position": "Senior Software Engineer",
+      "website": "https://www.newvoicemedia.com/",
+      "startDate": "April-2012",
+      "endDate": "September-2017",
+      "summary": "Call centre software as a service",
+      "highlights": [
+        "C#, MySQL, Ruby, Docker, AWS, JavaScript, WebServices",
+        "Implement DDD",
+        "DevOps: build infrastructure and pipelines"
+      ]
+    },
+    {
+      "company": "Northgate Arinso",
+      "position": "Team Lead / Principal Developer",
+      "website": "http://www.ngahr.co.uk/",
+      "startDate": "2004",
+      "endDate": "2012",
+      "summary": "",
+      "highlights": [
+        "C#, SQL Server, Oracle, JavsScript, WebServices, Desktop and Mobile apps"
+      ]
+    },
+    {
+      "company": "Microsoft",
+      "position": "Senior Software Developer",
+      "website": "https://www.microsoft.com/en-gb",
+      "startDate": "2001",
+      "endDate": "2004",
+      "summary": "",
+      "highlights": [
+        "C#, SQL Server"
+      ]
+    },
+    {
+      "company": "Documentum",
+      "position": "Principal Consultant",
+      "website": "https://documentum.opentext.com/documentum/",
+      "startDate": "2000",
+      "endDate": "2001",
+      "summary": "",
+      "highlights": [
+        "C, HTML, JavaScript"
+      ]
+    },
+    {
+      "company": "PWA Personnel Systems",
+      "position": "Principal Consultant",
+      "website": "",
+      "startDate": "1998",
+      "endDate": "2000",
+      "summary": "",
+      "highlights": [
+        "Visual Foxpro, Tooling"
+      ]
+    },
+    {
+      "company": "Highams",
+      "position": "Technical Team Lead",
+      "website": "",
+      "startDate": "1996",
+      "endDate": "1998",
+      "summary": "",
+      "highlights": [
+        "Visual Foxpro"
+      ]
+    },
+    {
+      "company": "Churchill Retail Solutions",
+      "position": "Development Manager",
+      "website": "",
+      "startDate": "1994",
+      "endDate": "1996",
+      "summary": "",
+      "highlights": [
+        "C, Clipper, Novell"
+      ]
+    },
+    {
+      "company": "KSE Computers",
+      "position": "Software Developer",
+      "website": "",
+      "startDate": "1990",
+      "endDate": "1993",
+      "summary": "",
+      "highlights": [
+        "KCML, KISAM"
+      ]
+    },
+    {
+      "company": "Custom Maintenance Systems",
+      "position": "Support Developer",
+      "website": "",
+      "startDate": "1987",
+      "endDate": "1990",
+      "summary": "",
+      "highlights": [
+        "C, Visual Basic, ISAM"
+      ]
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "Penair",
+      "area": "Comprehensive School",
+      "studyType": "",
+      "startDate": "2011-06-01",
+      "endDate": "2014-01-01",
+      "gpa": "4.0",
+      "courses": [
+        "8 O level passes"
+      ]
+    }
+  ],
+  "awards": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Web Development",
+      "level": "Good",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "Javascript"
+      ]
+    },
+    {
+      "name": "Backend",
+      "level": "Good",
+      "keywords": [
+        "C#",
+        "Ruby",
+        "Go"
+      ]
+    },
+    {
+      "name": "Database",
+      "level": "Good",
+      "keywords": [
+        "MySQL",
+        "SQL Server"
+      ]
+    },
+    {
+      "name": "DevOps",
+      "level": "Good",
+      "keywords": [
+        "Chef",
+        "Terraform",
+        "AWS"
+      ]
+    },
+    {
+      "name": "Working practice",
+      "level": "Good",
+      "keywords": [
+        "Agile",
+        "Jira"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker"
+    }
+  ],
+  "interests": [],
+  "references": []
+}
