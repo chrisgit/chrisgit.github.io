@@ -16,16 +16,16 @@ This topic might seem easy if you run your own build server but for those that d
 ## Build Tools
 Download build tools from the [Visual Studio download page](https://www.visualstudio.com/downloads/)
 
-![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-30-msbuild-building-solution-files/01-download-build-tools.png){: .align-center}
+![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-30-msbuild-without-visual-studio/01-download-build-tools.png){: .align-center}
 
 Install the tools and select Web development build tools, this option also selects the .Net frameworks for installation, should you wish you can customise what is instaleld by selecting Individual Components or Language Packs tabs.
 
-![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-30-msbuild-building-solution-files/02-install-build-tools.png){: .align-center}
-![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-30-msbuild-building-solution-files/03-install-completed.png){: .align-center}
+![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-30-msbuild-without-visual-studio/02-install-build-tools.png){: .align-center}
+![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-30-msbuild-without-visual-studio/03-install-completed.png){: .align-center}
 
 After installing the build tools you will get a new command prompt in the start menu, called “Developer Command Prompt for VS 2017”. 
 
-![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-30-msbuild-building-solution-files/04-developer-command-prompt.png){: .align-center}
+![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-30-msbuild-without-visual-studio/04-developer-command-prompt.png){: .align-center}
 
 This command prompt runs a script to create all of the environment variables required to run the build tools.
 
@@ -36,7 +36,7 @@ If you use Nuget packages these will need to be restored, fortunately Nuget supp
 
 Save the Nuget.exe file to a folder in your path, or the same location that MSBuild is stored, if you downloaded the Visual Studio 2017 build tools then it is likely to be stored in %programfiles(x86)%\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin folder.
 
-![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-30-msbuild-building-solution-files/05-msbuild_location.png){: .align-center}
+![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-30-msbuild-without-visual-studio/05-msbuild_location.png){: .align-center}
 
 You'll see from above that I have two versions of MSBuild installed, it is probaby because the locations and names of certain files have changed for Visual Studio 2017 so you will have to check your exact installation location. 
 

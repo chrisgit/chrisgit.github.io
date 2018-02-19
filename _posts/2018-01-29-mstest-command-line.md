@@ -28,7 +28,7 @@ Insert table from here:
 
 So quirks aside, MSTest worked really well inside of Visual Studio, everything was available in the Test Explorer, I could re-run all tests, run only new tests and debug difficult to setup test.
 
-![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-29-msbuild-building-solution-files/01-test-explorer.png){: .align-center}
+![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-29-mstest-command-line/01-test-explorer.png){: .align-center}
 
 The coding exercise stipulated
 
@@ -37,11 +37,11 @@ The coding exercise stipulated
 ### Calling from the command line
 Calling MSTest from the command line should be easy, the [documentation is clear](https://msdn.microsoft.com/en-us/library/ms182489.aspx), it ought to be a case of running the program with the correct command line switches. On the face of it I should be able to open the Visual Studio command prompt, navigate to the root of my solution, build my solution and run MSTest from the command line
 
-![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-29-msbuild-building-solution-files/02-mstest_from_commandline.png){: .align-center}
+![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-29-mstest-command-line/02-mstest_from_commandline.png){: .align-center}
 
 Oh dear, epic fail, after burning up around three hours I switched tactics having read an article from an [MSDN page](https://msdn.microsoft.com/en-us/library/ms182486(v=vs.140).aspx) stating that VSTest.Console.exe can be used from the command line instead of MSTest.
 
-![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-29-msbuild-building-solution-files/03-vstest-commandline
+![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-29-mstest-command-line/03-vstest-commandline
 .png){: .align-center}
 
 And with that I'm happy to use VSTest.Console.exe because ultimately this is just for a coding kata, on my development environment I'll stay within the confines of Visual Studio, if I was running my own build server then I'd invest more time.
