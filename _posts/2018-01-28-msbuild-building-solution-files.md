@@ -48,10 +48,10 @@ The metaproj file resembles the XML MSBuild files that we all know and love so y
 ![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-28-msbuild-building-solution-files/05-build-target.png){: .align-center}
 
 ## MSBuild and Nuget restore
-New for MSBuild 15.1 and above is the ability to restore Nuget packages. This feature was documented here: https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore
+New for MSBuild 15.1 and above is the ability to restore Nuget packages. This feature was documented here: [https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore)
 
 If you are building a C# solution with MSBuild from a solution file you can specify the restore target with /t:restore.
 
 ### Warning for MSTest projects
 So, it's not all good. If you have a project that uses MSTest and use the MSBuild restore target it will not download the appropriate Nuget packages for you.
-The question was raised here: https://developercommunity.visualstudio.com/content/problem/32155/msbuild-trestore-doesnt-work-with-mstest-projects.html with the answer that it is by design.
+The question was raised here: [https://developercommunity.visualstudio.com/content/problem/32155/msbuild-trestore-doesnt-work-with-mstest-projects.html](https://developercommunity.visualstudio.com/content/problem/32155/msbuild-trestore-doesnt-work-with-mstest-projects.html) with the answer that Nuget packages will not be restored for MSTest projects and this is by design.
