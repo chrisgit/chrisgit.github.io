@@ -31,21 +31,21 @@ Do back to the coding kata, I can either using csc, response files, MSBuild or o
 ## Using MSBuild to build a solution file
 Simply open the Visual Studio developer command prompt, navigate to the root of your project and type MSBuild or MSBuild <name of solution>
 
-![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-28-msbuild-building-solution-files/01-msbuild-solution.png){: .align-center}
+![01-msbuild-solution]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-28-msbuild-building-solution-files/01-msbuild-solution.png){: .align-center}
 
 When using MSBuild with a solution file you can also specify a target and a build configuration, such as msbuild /t:Build /p:Configuration=Release
 
-![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-28-msbuild-building-solution-files/02-msuild-solution-release-config.png){: .align-center}
+![02-msuild-solution-release-config]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-28-msbuild-building-solution-files/02-msuild-solution-release-config.png){: .align-center}
 
 The solution file doesn't even contain a target, it isn't even XML so how can you specify a target at all? MSBuild actually generates an MSBuild file in memory and executes that; to see the generated file you will need to add an environment variable, set msbuildemitsolution=1. Now running MSBuild will generate a metaproj file
 
-![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-28-msbuild-building-solution-files/03-msbuild-dynamic-file.png){: .align-center}
+![03-msbuild-dynamic-file]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-28-msbuild-building-solution-files/03-msbuild-dynamic-file.png){: .align-center}
 
-![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-28-msbuild-building-solution-files/04-metaproj.png){: .align-center}
+![04-metaproj]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-28-msbuild-building-solution-files/04-metaproj.png){: .align-center}
 
 The metaproj file resembles the XML MSBuild files that we all know and love so you can navigate to the different targets.
 
-![image-center]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-28-msbuild-building-solution-files/05-build-target.png){: .align-center}
+![05-build-target]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-28-msbuild-building-solution-files/05-build-target.png){: .align-center}
 
 ## MSBuild and Nuget restore
 New for MSBuild 15.1 and above is the ability to restore Nuget packages. This feature was documented here: [https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore)
