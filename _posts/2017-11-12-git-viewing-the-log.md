@@ -131,4 +131,7 @@ Like me, if you have used Atlassian's SourceTree or [BitBucket](https://bitbucke
 
 Also great resources elsewhere like this Visual playpen [https://learngitbranching.js.org/](https://learngitbranching.js.org/) or a generally good sandboxed learning environment such as [katacoda](https://www.katacoda.com/courses/git)
 
+## Summary
+One thing to note is that all of the tools use the git log command which will look at your local repository NOT the remote repository, to keep your local repository up to date you will need to perform a [git fetch](https://git-scm.com/docs/git-fetch) or [git pull](https://git-scm.com/docs/git-pull) (NB: pull is fetch and merge).
+
 Git is a great source control system which is easy to get started with but has plenty of depth that you never stop learning it.
