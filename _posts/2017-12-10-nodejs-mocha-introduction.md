@@ -60,7 +60,7 @@ To add a configuration click on the bug, open the drop down and select "Add Conf
 
 The launch.json file will open in the editor, we need to add a new section inside the configurations array.
 
-```
+```json
 {
     "version": "0.2.0",
     "configurations": [
@@ -102,7 +102,7 @@ lib
 Before we dig in and start to use mock-require, rewire and sinon we will start with a basic unit test.
 
 Start with a simple bit of code to add two numbers together, create a file named calculator.js
-```JavaScript
+```javascript
 exports.add = function(numberOne, numberTwo) {
     return numberOne + numberTwo;
 };
@@ -120,7 +120,7 @@ Mocha has two blocks that we are interested in
 Both "describe" and "it" methods accept a callback function parameter, normally the callback is provided as an anonymous function.
 
 Given our simple add method we can provide a simple test using describe and it.
-```JavaScript
+```javascript
 const calculator = require('./calculator.js')
 describe('add', () => {
   it('returns correct result', () => {
@@ -144,7 +144,7 @@ From the developer perspective the tests that you write should
 - be simple and easy to maintain
 
 The mocha test we wrote was easy to read but when you look at the debug console the assertion description is a bit vague. We are testing the add method and ensuring that the method provides the correct result, it doesn't tell us too much about the test, why we wrote it or what the parameters were. Mocha allows us to have nested describe blocks so that we can give the tests more context.
-```JavaScript
+```javascript
 describe('add', () => {
   describe('4 plus 5', () => {
     it('returns 9', () => {
@@ -164,7 +164,7 @@ The test uses a basic exact equal to perform the assertion but it is more common
 
 The assertion library that I have used is should and my test can be updated to remove the exact equal statement with the equal method from the should framework.
 
-```JavaScript
+```javascript
 const calculator = require('./calculator.js')
 const should = require('should');
 
@@ -182,7 +182,7 @@ describe('add', () => {
 Some test frameworks allow the tests to be data driven, this means your test code only needs to be written once but will accept parameters and expectations; if you have used something like NUnit you will likely be familiar with test cases.
 
 Mocha does not provide the capability for writing test cases but you can write dynamic methods with JavaScript; we create an array of objects that can then be used to drive the tests.
-```JavaScript
+```javascript
 describe('add', () => {
   var tests = [
       {numberOne: -1, numberTwo: -3,  expected: -4, description: 'when numbers are negative'},
