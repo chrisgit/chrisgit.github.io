@@ -11,6 +11,9 @@ Late last year I'd been making changes to a Nodejs project that is a plug module
 
 The plugin requires libraries that are only available when it is running in the context of the Nodejs Web server but my goal is to give the plugin a full suite of unit tests.
 <!--more-->
+
+[mock-require](https://www.npmjs.com/package/mock-require) is a library that allows us to bypass the normal loading mechanism for Node, why would you want to do that? Read on ...
+
 ## The problem
 Lets start with a basic calculator file
 
@@ -35,9 +38,9 @@ describe('add', () => {
 });
 ```
 
-There is a new requiement in and the functionality needs to change to include a function library from a Nodejs server that is only available at runtime; adding the library for development poses lots of additional problems.
+There is a new requiement the functionality needs to change to include a function library from a Nodejs server that is only available at runtime; adding the library for development poses some problems.
 
-We make the change to use our library
+We make the change to the code use our library
 ```javascript
 const commonLib = require('@company/lib/core')
 
@@ -50,7 +53,7 @@ but running the unit tests result in an error
 
 ![01-module-load-failure]({{ site.url }}{{ site.baseurl }}/assets/posts/2018-01-07-nodejs-mocha-mock-require/01-module-load-failure.jpg){: .align-center}
 
-For now What we actually want to do is ignore the loading of the libraries.
+For now What we actually want to do is ignore the loading of any unavailable libraries to allow our tests to run.
 
 ## Fake loading the libraries
 To spoof the loading of the library I have used [mock-require](https://www.npmjs.com/package/mock-require), note the dash between mock and require, as an aside there are other libraries that perform the same function.
