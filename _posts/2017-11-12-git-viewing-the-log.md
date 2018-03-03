@@ -3,8 +3,7 @@ title: "Git: viewing the log"
 excerpt_separator: "<!--more-->"
 last_modified_at: 2017-03-09T10:27:01-05:00
 tags: 
-  - msbuild
-  - dotnet
+  - git
 ---
 
 There are very few Git commands that I use on a daily basis, typically the commands I'm most familiar with are
@@ -20,13 +19,13 @@ There are very few Git commands that I use on a daily basis, typically the comma
 
 Most of my Git experience has been in Windows using [SourceTree from Atlassian](https://www.sourcetreeapp.com/) or the Git integration in [Visual Studio Code](https://code.visualstudio.com/docs/introvideos/versioncontrol) 
 
-![01-download-build-tools]({{ site.url }}{{ site.baseurl }}/assets/posts/2017-11-12-git-viewing-the-log/01-git-in_visual-studio-code.jpg){: .align-center}
+![01-git-in-visual-studio-code]({{ site.url }}{{ site.baseurl }}/assets/posts/2017-11-12-git-viewing-the-log/01-git-in-visual-studio-code.jpg){: .align-center}
 
-As part of a recent investigation I installed Git bash and started to use the command line a little more.
+As part of a recent investigation I installed Git bash and started to use the command line a little more and if you know Git you'll know there is more than one way to perform the same function, here are some ways to query the Git log!
 
-If you know Git you'll know there is more than one way to perform the same function, here are some ways to query the Git log!
+## Using git log
+[git log](https://git-scm.com/docs/git-log) is run from the command line and shows the commit logs.
 
-## Git log
 Just want to view the check in comments
 ```
 git log -- file
@@ -46,6 +45,7 @@ git whatchanged -p file
 If a colon appears Git is just paginating using more, just press return for a new page or q to quit.
 
 ## Gitk
+[Gitk](https://git-scm.com/docs/gitk) is a GUI tool for Git.
 
 On Windows gitk is installed as part of the Git bash tools, on Ubuntu if you have Git installed but not Gitk you can install it with the apt package manager
 
@@ -55,28 +55,32 @@ sudo apt-get install gitk
 
 As an alternative to Git bash you could use the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 
-View history of a single file
+To view a single file with gitk type gitk <file>
 ```
-gitk file
+gitk lib/bitmap.rb
 ```
+
+![02-gitk-bitmap]({{ site.url }}{{ site.baseurl }}/assets/posts/2017-11-12-git-viewing-the-log/02-gitk-bitmap.jpg){: .align-center}
+
+To view all of the commits simply type gitk.
 
 ## Visual SourceTree
 
 SourceTree has a nice visual view of branches and check ins from the menu select View -> Log View 
 
-![02-sourcetree-visual]({{ site.url }}{{ site.baseurl }}/assets/posts/2017-11-12-git-viewing-the-log/02-sourcetree-visual.jpg){: .align-center}
+![03-sourcetree-visual]({{ site.url }}{{ site.baseurl }}/assets/posts/2017-11-12-git-viewing-the-log/03-sourcetree-visual.jpg){: .align-center}
 
 This view can be a bit overwhelming if you just want to look for specific files or changes go to File Status and select working Copy; ensure that you have all files selected.
 
-![03-sourcetree-select-files]({{ site.url }}{{ site.baseurl }}/assets/posts/2017-11-12-git-viewing-the-log/03-sourcetree-select-files.jpg){: .align-center}
+![04-sourcetree-select-files]({{ site.url }}{{ site.baseurl }}/assets/posts/2017-11-12-git-viewing-the-log/04-sourcetree-select-files.jpg){: .align-center}
 
 In your unstaged files select the file you want, from the menu select Action -> Log Selected or right click on the file and choose Log Selected
 
-![04-sourcetree-log-view]({{ site.url }}{{ site.baseurl }}/assets/posts/2017-11-12-git-viewing-the-log/04-sourcetree-log-view.jpg){: .align-center}
+![05-sourcetree-log-view]({{ site.url }}{{ site.baseurl }}/assets/posts/2017-11-12-git-viewing-the-log/05-sourcetree-log-view.jpg){: .align-center}
  
 Just one warning, SourceTree can slow down for large projects or those with a lot of files, other than that, it's great!
 
-### Git log cheat sheet (grab details from Jira and Git document)
+### Git log cheat sheet
 
 #### Basic log view
 ```
