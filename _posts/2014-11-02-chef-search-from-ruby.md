@@ -107,7 +107,7 @@ require 'chef'
 
 Chef::Config[:node_name]='chris_sullivan'
 Chef::Config[:client_key]='C:/Users/chris.sullivan/.chef/chris_sullivan.pem'
-Chef::Config[:chef_server_url]='https://chefserver.com'     
+Chef::Config[:chef_server_url]='https://chef.io'     
 
 
 Chef::Node.list.each do |node|  
@@ -132,7 +132,7 @@ Ridley::Logging.logger.level = Logger.const_get 'ERROR'
 
 # Example 1. Create an instance of Ridley, display role and node objects (may just display class name and memory location)
 ridley = Ridley.new(
-  server_url: 'https://devchefserver.net',
+  server_url: 'https://chef.io',
   client_name: 'chris_sullivan',
   client_key: 'C:/Users/chris.sullivan/.chef/chris_sullivan.pem'
 )
@@ -148,12 +148,12 @@ end
 
 
 # Example 3. Create an instance of Ridley for one off use, connection will be closed at the end of the block 
-Ridley.open(server_url: "https://devchefserver.net", client_name: 'chris_sullivan', client_key: 'C:\Users\chris.sullivan\.chef\chris_sullivan.pem') do |r|
+Ridley.open(server_url: "https://chef.io", client_name: 'chris_sullivan', client_key: 'C:\Users\chris.sullivan\.chef\chris_sullivan.pem') do |r|
   puts "Showing all nodes #{r.node.all}"
 end
 
 # Example 4. Use Ridley to display data
-Ridley.open(server_url: "https://devchefserver.net", client_name: 'chris_sullivan', client_key: 'C:\Users\chris.sullivan\.chef\chris_sullivan.pem') do |r|
+Ridley.open(server_url: "https://chef.io", client_name: 'chris_sullivan', client_key: 'C:\Users\chris.sullivan\.chef\chris_sullivan.pem') do |r|
   # Show all environments
   puts "Showing all environments #{r.environment.all}"
   # Get individual environment
