@@ -9,12 +9,12 @@ tags:
 The JIRA URL for displaying issues resembles REST naming convention but the content returned is HTML, not very helpful unless you are prepared to parse the content. Fortunately [JIRA has a REST API](https://docs.atlassian.com/jira/REST/cloud/).
 
 To access the JIRA REST API add a path of `/rest/asp/<api version>` to your JIRA server name
+<!--more-->
 ```
 https://<jira server name>/rest/asp/<api version>
 ```
 
 The JIRA REST API returns a JSON payload.
-<!--more-->
 
 The [JIRA REST API changes on a frequent basis](https://developer.atlassian.com/jiradev/jira-apis) and has multiple endpoints dictated by the version of the API so it's always worth staying up to date with the latest supported versions.
 
