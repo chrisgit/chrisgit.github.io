@@ -14,26 +14,32 @@ Typically my omissions included
 - what happens when the root file system fills up
 - swap file, swap partition or neither
 <!--more-->
+
 If you do want to install Ubuntu for short term use or just want to experiment then here the steps for creating an Ubuntu virtual machine; VirtualBox does guide you through this process with a series of dialogs.
 
 ## Virtual Machine
-The purpose is to install Ubuntu in a [Virtual Machine (VM)](https://en.wikipedia.org/wiki/Virtual_machine); the software to run Virtual Machines that I have chosen is [VirtualBox](https://www.virtualbox.org/), it is free and robust. VirtualBox can be downloaded at [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads).
-
-The process for installing VirtualBox itself is easy and once installed we are good to go; there are assumptions made that you will have some knowledge or experience of VirtualBox or another software package that can run Virtual Machines.
+The purpose of this article is to install Ubuntu Desktop in a [Virtual Machine (VM)](https://en.wikipedia.org/wiki/Virtual_machine); the software to run Virtual Machines that I have chosen is [VirtualBox](https://www.virtualbox.org/), it is free and robust. VirtualBox can be downloaded at [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads).
 
 Just to clarify the machine running VirtualBox (or the VM software) such as your desktop/laptop or other is called the host and the Virtual Machine itself is the guest.
 
+The process for installing VirtualBox on the host is easy and once installed we are good to go.
+
+When following the steps there are certain assumptions made that you will have basic knowledge or experience of VirtualBox or another software package that can run Virtual Machines.
+
 ## Step 01. Create a new Virtual Machine
-Open the VirtualBox manager, in Windows from a command prompt just type virtualbox and press return.
-Click on the New icon or press Ctrl+N or click on the Machine menu item and select New.
+Open the VirtualBox manager, on most operating systems you can search the applications.
+
+In Windows click on the start icon and start typing "Virtual" or open a command prompt just type "virtualbox" and press return, the VirtualBox manager application should be in the command path.
+
+When the VirtualBox manager has opened click on the New icon or hold down Ctrl+N or select Machine from the menu item and choose New.
 
 ![01-new-virtual-machine]({{ site.url }}{{ site.baseurl }}/assets/posts/2016-10-23-virtualbox-install-ubuntu/01-new-virtual-machine.png){: .align-center}
 
-The Create Virtual Machine dialog will appear; give your VM a name, type is Linux and name is Ubuntu (64-bit)
+The Create Virtual Machine dialog will appear; give your VM a name, the type is Linux and verion is Ubuntu (64-bit)
 
 ![02-name-type-version]({{ site.url }}{{ site.baseurl }}/assets/posts/2016-10-23-virtualbox-install-ubuntu/02-name-type-version.png){: .align-center}
 
-click next
+Click next to proceed.
 
 ## Step 02. Set the virtual machine memory size
 
@@ -47,7 +53,7 @@ NB:
 - consider if you want to run multiple virtual machines at the same time
 - with our Ubuntu install a swap partition equaling the size of the memory will be created
 
-click next
+Click next to proceed.
 
 ## Step 03. Create your hard disk
 Ubuntu needs to be installed on a hard disk so we need to be able to create one
@@ -75,26 +81,26 @@ VDI, VMDK, and VHD all support dynamically allocated sizing. VMDK has an additio
 
 For the purposes of this article we are going native and selecting VDI; if we need to change the software running the Virtual Machine then VirtualBox allows us to export the disk to an [Open Virtualisation Format](https://en.wikipedia.org/wiki/Open_Virtualization_Format) so that can be imported by another product.
 
-click next
+Click next to proceed.
 
 Deciding on how much hard disk space you require depends on what you want your Virtual Machine to do; VirtualBox allows you to specify a fixed disk size or dynamically allocated. If you select dynamically allocated disk then VirtualBox will expand the disk as required, this is useful if you do not know how much space you will need to start with, don't worry though if you select fixed size you can manually expand the drive later.
 
 ![06-storage-on-physical-disk]({{ site.url }}{{ site.baseurl }}/assets/posts/2016-10-23-virtualbox-install-ubuntu/06-storage-on-physical-disk.png){: .align-center}
 
-NB:
+Note:
 - the virtual machine will use the physical drive space of your host machine so make sure you have enough
 - with fixed or dynamic disks you can resize at a later date
 
-Specify a disk size, in the case of dynamically allocated disks .... (need more info)
+Specify a disk size.
 
 ![07-file-location-size]({{ site.url }}{{ site.baseurl }}/assets/posts/2016-10-23-virtualbox-install-ubuntu/07-file-location-size.png){: .align-center}
 
-With our Ubuntu install the drive size needs to include a swap partition equalling the size of the memory allocated to the Virtual Machine, therefore if you have assigned 2Gb of memory and require 6Gb or usable space the drive size needs to be 8Gb.
+With our Ubuntu install the drive size needs to include a swap partition equalling the size of the memory allocated to the Virtual Machine, therefore if you have assigned 2Gb of memory and require 6Gb of usable space the drive size needs to be at least 8Gb.
 
-click create
+Click create to proceed.
 
 ## Step 4. Install Ubuntu
-With an empty disk created we are now ready to [install Ubuntu](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0)
+With an empty disk created we are now ready to [install Ubuntu desktop](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop#0)
 
 The empty disk will appear in the Virtual Box Manager 
 
@@ -102,13 +108,13 @@ The empty disk will appear in the Virtual Box Manager
 
 and from now on we will call it an appliance.
 
-Installing Ubuntu is reasonably easy, we will download a disc image in ISO format and install one of the Long Term Support (LTS) versions [16.04](https://www.ubuntu.com/download/desktop). Keep hold of this downloaded image as it acts as a "Live CD" and will allow us to modify the installation ar a later date.
+Installing Ubuntu is reasonably easy, we will download a disc image in ISO format and install one of the Long Term Support (LTS) versions [14.04](https://www.ubuntu.com/download/desktop). Keep hold of this downloaded image as it acts as a "Live CD" and will allow us to modify the installation ar a later date.
 
 Double click appliance, the select start-up disk dialog will open, click on the folder and locate the ISO, I'm installing 14.04.5 LTS
 
 ![09-select-startup-disk]({{ site.url }}{{ site.baseurl }}/assets/posts/2016-10-23-virtualbox-install-ubuntu/09-select-startup-disk.png){: .align-center}
 
-click start
+Click start to proceed.
 
 The Ubuntu disc will be inserted into a virtual drive and Ubuntu will boot.
 
@@ -118,25 +124,25 @@ Select install Ubuntu, the prepare to install Ubuntu screen will display along w
 
 ![11-preparing-install-ubuntu]({{ site.url }}{{ site.baseurl }}/assets/posts/2016-10-23-virtualbox-install-ubuntu/11-preparing-install-ubuntu.png){: .align-center}
 
-click continue
+Click continue to proceed.
 
 The installation process allows you customise your installation, we are performing a basic installation here, the defaults are all good.
 
 ![12-installation-type]({{ site.url }}{{ site.baseurl }}/assets/posts/2016-10-23-virtualbox-install-ubuntu/12-installation-type.png){: .align-center}
 
-Click Install Now. Ubuntu will confirm the drive settings that we have selected.
+Click Install Now to proceed. Ubuntu will confirm the drive settings that we have selected.
 
 ![13-write-changes-to-disks]({{ site.url }}{{ site.baseurl }}/assets/posts/2016-10-23-virtualbox-install-ubuntu/13-write-changes-to-disks.png){: .align-center}
 
-click continue. Ubuntu now confirms your timezone locations
+Click continue to proceed. Ubuntu now confirms your timezone locations
 
 ![14-where-are-you]({{ site.url }}{{ site.baseurl }}/assets/posts/2016-10-23-virtualbox-install-ubuntu/14-where-are-you.png){: .align-center}
 
-Click continue. Select your keyboard layout
+Click continue to proceed. Select your keyboard layout
 
 ![15-keyboard-layout]({{ site.url }}{{ site.baseurl }}/assets/posts/2016-10-23-virtualbox-install-ubuntu/15-keyboard-layout.png){: .align-center}
 
-Click continue. Enter the computer name, your name and password, these details will be used to login when the Ubuntu installation is complete.
+Click continue to proceed. Enter the computer name, your name and password, these details will be used to login when the Ubuntu installation is complete.
 
 ![16-who-are-you]({{ site.url }}{{ site.baseurl }}/assets/posts/2016-10-23-virtualbox-install-ubuntu/16-who-are-you.png){: .align-center}
 
