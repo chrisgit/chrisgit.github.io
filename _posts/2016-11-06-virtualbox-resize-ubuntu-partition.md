@@ -111,11 +111,30 @@ The unallocated space needs to be adjacent to the partition you are extending. I
 
 Moving the unallocated space reminds me of the [Towers Of Hanoi puzzle](https://en.wikipedia.org/wiki/Tower_of_Hanoi); here is presented two methods to extend the partition.
 
+Increasing and decreasing the partition size with Gparted done graphically, right click the partition and select "Resize/Move"
+- Grab the left arrow to shrink or expand
+- Grab the right arrow to shrink or expand
+- Grab the middle (white section) to move
+
 The Ubuntu installation here has a swap partition which needs to be turned off; the key next to the partition name indicates that it is currently in use, right click on the linux-swap partition and select swapoff.
 
 ![12-turn-swap-off]({{ site.url }}{{ site.baseurl }}/assets/posts/2016-11-06-virtualbox-resize-ubuntu-partition/12-turn-swap-off.jpg){: .align-center}
 
-## Option 1. Move the swap file partition
+## Option 1. Without deleting the swap partition
+
+### Summary of operations
+To extend the /dev/sda1 partition
+- Turn the swap partition off (right click swap off)
+- Extend /dev/sda2 to include the unallocated space, grab right arrow, drag right
+- Move /dev/sda5 (the swap partition) to the end of /dev/sda2, grab white section, drag right
+- Reduce the size of /dev/sda2 to include only the swap /dev/sda5, grab left arrow, drag right
+
+The unallocated space should now be adjacent to /dev/sda1
+- Increase the size of /dev/sda1, grab right arrow, drag right
+- Turn the swap file back on
+- Reboot
+
+## Detail of operations
 
 First, resize your extended partition (not the one labeled linux-swap) to include the free space.
 
@@ -159,8 +178,22 @@ Check your disk sizes
 
 ![20-new-disk-size]({{ site.url }}{{ site.baseurl }}/assets/posts/2016-11-06-virtualbox-resize-ubuntu-partition/20-new-disk-size.jpg){: .align-center}
 
-## Option 2. Delete the swap file
+## Option 2. Delete the swap partition
 
+### Summary of operations
+To extend the /dev/sda1 partition
+- Turn the swap partition off (right click swap off)
+- Delete the swap partition
+- Extend /dev/sda2 to include the unallocated space, grab right arrow, drag right
+- Recreate the linux swap partition and position at the end of /dev/sda2
+- Reduce the size of /dev/sda2 to include only the swap /dev/sda5, grab left arrow, drag right
+
+The unallocated space should now be adjacent to /dev/sda1
+- Increase the size of /dev/sda1, grab right arrow, drag right
+- Turn the swap file back on
+- Reboot
+
+### Detail of operations
 Delete the current swap partition, right click on /dev/sda5, select delete
 
 ![21-delete-swap-file]({{ site.url }}{{ site.baseurl }}/assets/posts/2016-11-06-virtualbox-resize-ubuntu-partition/21-delete-swap-file.jpg){: .align-center}

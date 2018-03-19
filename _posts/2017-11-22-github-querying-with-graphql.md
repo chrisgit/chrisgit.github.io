@@ -146,20 +146,25 @@ When using cURL in bash the dollar sign needs to be escaped with a backslash oth
 ```
 curl -H "Authorization: bearer <your personal access token>" https://api.github.com/graphql  \
 -d @- << EOF
- { 
-   "query": "query(\$number_of_repos:Int!) {
-	  viewer {
-		name
-		 repositories(last: \$number_of_repos) {
-		   nodes {
-			 name
-		   }
-		 }
-	   }
-	}",
-	"variables": {
-		"number_of_repos": 3
-	}	
+{ 
+  "query": "query(\$number_of_repos:Int!)
+  {
+    viewer
+    {
+      name
+      repositories(last: \$number_of_repos)
+      {
+        nodes
+        {
+         name
+        }
+      }
+    }
+  }",
+  "variables":
+  {
+     "number_of_repos": 3
+  }
 } 
 EOF
 ```
@@ -169,26 +174,27 @@ Here is our very first query re-written using variables, passing in the reposito
 curl -H "Authorization: bearer <your personal access token>" https://api.github.com/graphql  \
 -d @- << EOF
 {
-   "query": "query(\$repo_owner:String!, \$repo_name:String!)
-   { 
-		repository(owner:\$repo_owner, name:\$repo_name) 
-		{ 
-			issues(last:20, states:CLOSED) 
-			{ 
-				edges 
-					{ node 
-						{  title  url labels(first:5) 
-						{ edges 
-							{ node 
-								{ name } 
-							} 
-						} 
-					}
-				} 
-			} 
-		} 
-	}",
-	"variables": { "repo_owner": "octocat", "repo_name": "Hello-World" }
+  "query": "query(\$repo_owner:String!, \$repo_name:String!)
+  { 
+    repository(owner:\$repo_owner, name:\$repo_name) 
+    { 
+      issues(last:20, states:CLOSED) 
+      { 
+        edges 
+       {
+		  node 
+          {  title  url labels(first:5) 
+            { edges 
+              { node 
+                { name } 
+              } 
+            } 
+          }
+        } 
+      } 
+   } 
+  }",
+  "variables": { "repo_owner": "octocat", "repo_name": "Hello-World" }
 }
 EOF
 ```
@@ -204,7 +210,7 @@ Assuming you have set the appropriate HTTP headers and set the method as POST yo
 The first query re-written using variables
 ```
 {
-   "query": "query($repo_owner:String!, $repo_name:String!) { repository(owner:$repo_owner, name:$repo_name) { issues(last:20, states:CLOSED) { edges { node {  title  url labels(first:5) { edges { node { name } } } } } } } }",
+  "query": "query($repo_owner:String!, $repo_name:String!) { repository(owner:$repo_owner, name:$repo_name) { issues(last:20, states:CLOSED) { edges { node {  title  url labels(first:5) { edges { node { name } } } } } } } }",
   "variables": { "repo_owner": "octocat", "repo_name": "Hello-World" }
 }
 ```
