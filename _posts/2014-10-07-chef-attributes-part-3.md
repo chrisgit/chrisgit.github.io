@@ -319,4 +319,4 @@ default['mywindows']['nvm']['cookie'] = '*828212AFED8227ADCCB7'
 default['mywindows']['install_path'] = 'C:\Temp'
 ```
 
-![12-chef-attribute-validation-pass]({{ site.url }}{{ site.baseurl }}/assets/posts/2014-10-05-chef-attributes/11-chef-attribute-validation-pass.jpg){: .align-center}
+![12-chef-attribute-validation-pass]({{ site.url }}{{ site.baseurl }}/assets/posts/2014-10-05-chef-attributes/12-chef-attribute-validation-pass.jpg){: .align-center}
