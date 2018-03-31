@@ -26,6 +26,7 @@ author:
 #  twitter_username: Towlette_Pettetucci
 github_username: chrisgit
 logo: /assets/site/icons/chrisgit.svg
+search: true
 
 # Liquid
 liquid:
