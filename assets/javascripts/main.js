@@ -2,10 +2,10 @@
 ---
 
 /*!
- * Basically Basic Jekyll Theme 1.3.1
+ * Basically Basic Jekyll Theme 1.4.1
  * Copyright 2017-2018 Michael Rose - mademistakes | @mmistakes
  * Free for personal and commercial use under the MIT license
- * https://github.com/mmistakes/jekyll-basically-theme/blob/master/LICENSE.md
+ * https://github.com/mmistakes/jekyll-basically-theme/blob/master/LICENSE
 */
 
 var menuItems = document.querySelectorAll('#sidebar li');
@@ -60,9 +60,11 @@ myMenu.addEventListener('click', function () {
   toggleClassMenu();
   animateMenuItems();
 }, false);
-mySearchToggle.addEventListener('click', function () {
-  toggleClassSearch();
-}, false);
+if (mySearchToggle) {
+  mySearchToggle.addEventListener('click', function () {
+    toggleClassSearch();
+  }, false);
+}
 
 // Toggle search input and content visibility
 function toggleClassSearch() {
